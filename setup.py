@@ -11,6 +11,9 @@ setup(name='event_time_format',  # 包名
       author='errord',
       author_email='errord@gmail.com',
       url='https://github.com/errord/EventTimeFormat',
+      project_urls={
+        "Source": "https://github.com/errord/EventTimeFormat",
+      },
       install_requires=[
         'arrow>=1.1.0'
       ],
