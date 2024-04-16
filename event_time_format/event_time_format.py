@@ -9,7 +9,51 @@ import re
 import logging
 import time
 import arrow
+import requests
+import numpy as np
+import pandas as pd
+import tensorflow as tf
+from bs4 import BeautifulSoup
+
+
+
 #import json
+
+def getUtcTime():
+    url = 'http://worldtimeapi.org/api/timezone/Etc/UTC'
+    response = requests.get(url)
+    if response.status_code == 200:
+        data = response.json()
+        return data['datetime']
+    else:
+        print("Failed to retrieve UTC time.")
+        return None
+
+def numpyTime():
+    arr = np.array([1, 2, 3])
+    arr_times_2 = arr * 2
+    return arr_times_2
+
+def pandasEvent():
+    data = {'Name': ['Alice', 'Bob', 'Charlie'], 'Age': [25, 30, 35]}
+    df = pd.DataFrame(data)
+    print(df)
+
+def testTf(x_train, y_train):
+    model = tf.keras.Sequential([
+        tf.keras.layers.Dense(64, activation='relu', input_shape=(784,)),
+        tf.keras.layers.Dense(10, activation='softmax')
+    ])
+    model.compile(optimizer='adam',
+                loss='sparse_categorical_crossentropy',
+                metrics=['accuracy'])
+
+    model.fit(x_train, y_train, epochs=5)
+
+def testBs4():
+    html_doc = "<html><body><p>Hello, World!</p></body></html>"
+    soup = BeautifulSoup(html_doc, 'html.parser')
+    print(soup.p.text)
 
 #
 # weekday base on 0 (星期一)

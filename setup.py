@@ -5,7 +5,7 @@ with open("README.md", "r") as f:
   long_description = f.read()
 
 setup(name='event_time_format',  # 包名
-      version='1.0.2',  # 版本号
+      version='1.0.3',  # 版本号
       description='event time format',
       long_description=long_description,
       author='errord',
@@ -15,7 +15,12 @@ setup(name='event_time_format',  # 包名
         "Source": "https://github.com/errord/EventTimeFormat",
       },
       install_requires=[
-        'arrow>=1.1.0'
+        'arrow>=1.1.0',
+        'requests>=2.20.1',
+        'numpy>=1.21.0',
+        'pandas>=1.3.3',
+        'tensorflow>=2.5.1',
+        'bs4>=0.0.2'
       ],
       license='BSD License',
       packages=find_packages(),
