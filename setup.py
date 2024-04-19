@@ -5,7 +5,7 @@ with open("README.md", "r") as f:
   long_description = f.read()
 
 setup(name='event_time_format',  # 包名
-      version='1.0.3',  # 版本号
+      version='1.0.5',  # 版本号
       description='event time format',
       long_description=long_description,
       author='errord',
